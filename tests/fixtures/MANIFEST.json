@@ -1,0 +1,94 @@
+{
+  "note": "Fixtures for the offline extraction tests. origin=excerpt: real vendor text, reduced to the sections the tests need (only Google pages, which state a CC BY 4.0 content license). origin=synthetic: invented text on the structure of the real page (Meta and Microsoft/LinkedIn, where no redistribution grant was found). Full captures are not part of the repository. See THIRD_PARTY_NOTICES.md.",
+  "fixtures": [
+    {
+      "file": "excerpts/google-ads__release-notes.html",
+      "connector": "google-ads",
+      "source_id": "release-notes",
+      "type": "html",
+      "origin": "excerpt",
+      "source_url": "https://developers.google.com/google-ads/api/docs/release-notes",
+      "final_url": "https://developers.google.com/google-ads/api/docs/release-notes",
+      "http_status": 200,
+      "captured_at": "2026-11-03T14:10:25+00:00",
+      "original_sha256": "f61b0a59fb87bffe0d61ebda8932deb2b2d94358c3604cc1684e0543e1360d06",
+      "original_raw_bytes": 389579,
+      "license": "Page content CC BY 4.0 (stated on the page: https://creativecommons.org/licenses/by/4.0/); code samples Apache 2.0",
+      "kept_sections": [
+        "page summary box (needed to test drop_sections)",
+        "heading + first paragraph of every other section",
+        "full 'v24.1 (2026-05-13)' section with its table cut to 4 rows (negation regression)",
+        "'Archived release notes' (end-of-page marker)"
+      ],
+      "removed": "site chrome, scripts and styles, the bodies of all other sections",
+      "min_chars": 1500,
+      "min_headings": 15
+    },
+    {
+      "file": "excerpts/google-ads__sunset-dates.html",
+      "connector": "google-ads",
+      "source_id": "sunset-dates",
+      "type": "html",
+      "origin": "excerpt",
+      "source_url": "https://developers.google.com/google-ads/api/docs/sunset-dates",
+      "final_url": "https://developers.google.com/google-ads/api/docs/sunset-dates",
+      "http_status": 200,
+      "captured_at": "2026-11-03T14:10:26+00:00",
+      "original_sha256": "da9642b552787a8203ab6b638149ef2094ee11301493e4a45ef89ec907953c75",
+      "original_raw_bytes": 2723251,
+      "license": "Page content CC BY 4.0 (stated on the page: https://creativecommons.org/licenses/by/4.0/); code samples Apache 2.0",
+      "kept_sections": [
+        "page summary box",
+        "heading + first paragraph of every other section",
+        "full 'Feature deprecations and changes' (end-of-page marker)"
+      ],
+      "removed": "site chrome, scripts and styles, the bodies of all other sections",
+      "min_chars": 800,
+      "min_headings": 5
+    },
+    {
+      "file": "synthetic/meta-ads__marketing-api-changelog.html",
+      "connector": "meta-ads",
+      "source_id": "marketing-api-changelog",
+      "type": "markdown",
+      "origin": "synthetic",
+      "modeled_on": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/marketing-api-changelog.md",
+      "structure": "Markdown inside an HTML <pre> wrapper; dated entries, anchored sub-headings, a versions table; HTML entities",
+      "min_chars": 900,
+      "min_headings": 4
+    },
+    {
+      "file": "synthetic/meta-ads__versioned-changes-v25.html",
+      "connector": "meta-ads",
+      "source_id": "versioned-changes-v25",
+      "type": "markdown",
+      "origin": "synthetic",
+      "modeled_on": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/marketing-api-changelog/version25.0.md",
+      "structure": "Markdown in a <pre> wrapper; a deprecation sub-section with an effective date, endpoint list with &#123; &#125; entities",
+      "min_chars": 800,
+      "min_headings": 4
+    },
+    {
+      "file": "synthetic/meta-ads__out-of-cycle-changes.html",
+      "connector": "meta-ads",
+      "source_id": "out-of-cycle-changes",
+      "type": "markdown",
+      "origin": "synthetic",
+      "modeled_on": "https://developers.facebook.com/documentation/ads-commerce/marketing-api/out-of-cycle-changes/occ-2026.md",
+      "structure": "Markdown in a <pre> wrapper; dated entries",
+      "min_chars": 800,
+      "min_headings": 8
+    },
+    {
+      "file": "synthetic/linkedin-marketing__recent-changes.html",
+      "connector": "linkedin-marketing",
+      "source_id": "recent-changes",
+      "type": "html",
+      "origin": "synthetic",
+      "modeled_on": "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes",
+      "structure": "documentation-portal layout: header/nav, auth notification lines, outline, warning admonition, dated release sections, archive heading",
+      "min_chars": 1500,
+      "min_headings": 10
+    }
+  ]
+}

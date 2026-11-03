@@ -1,0 +1,31 @@
+<html><head><title>Version 25.0 (synthetic)</title><meta charset="UTF-8" /><style nonce="x">body { font-family: monospace; margin: 20px; }pre { white-space: pre-wrap; word-wrap: break-word; }</style></head><body><pre data-testid="developer-docs-markdown-page"># Version 25.0
+
+*SYNTHETIC FIXTURE: invented text that only mimics the page structure of a documentation changelog. It is not vendor documentation.*
+
+## Marketing API
+
+February 18, 2027 | **Available until** February 23, 2028 | [Blog post](https://example.invalid/blog/v25)
+
+### Bundled Campaigns
+
+#### Bundle Campaigns and Bundle App Campaigns deprecation
+
+*Effective now for v25.0 and, from June 30, 2027, for every earlier version.*
+
+Bundle campaigns can no longer be created, copied or edited through the API ([details](https://example.invalid/docs/bundle-campaigns)).
+
+Existing bundle campaigns need to be rebuilt; the [migration guide](https://example.invalid/docs/migrate) lists the steps.
+
+Affected endpoints:
+
+* [`POST /&#123;ad-account-id&#125;/campaigns`](https://example.invalid/ref/campaigns)
+* [`POST /&#123;campaign-id&#125;/copies`](https://example.invalid/ref/copies)
+
+### Reporting
+
+#### Report run status
+
+The `async_status` field now returns &quot;Job Skipped&quot; for runs that were not started. Clients should treat it as a terminal state.
+
+
+</pre></body></html>

@@ -1,0 +1,22 @@
+# EXAMPLE ONLY - a template for a new connector. It is not one of the production vendor connectors
+# (Meta Ads, Google Ads, LinkedIn Marketing) and is never loaded by default.
+# Copy the entry into connectors.yaml and adapt it. Field reference: README.md, "Add a new connector".
+connectors:
+  - name: Example Vendor Ads        # human-readable; also the key under which baselines are stored
+    id: example-vendor-ads          # stable id: lowercase, used by `docs-watchdog --only example-vendor-ads`
+    vendor: Example Vendor
+    scope: Example Ads API (what this connector covers)
+    example: true                   # marks templates; never counted as a production connector
+    priority: 3                     # lower runs first
+    enabled: true
+    sources:
+      - id: changelog               # unique within the connector
+        type: example-lines         # built-in: http | markdown | rss | openapi | playwright;
+                                    # or a custom strategy registered in src/docs_watchdog/connectors/
+        verified: true              # set true only after `--dry-run` showed the right text
+        url: "https://example.invalid/changelog.txt"   # must be https; {year} expands to the current year
+        min_chars: 20               # shorter extractions count as an incomplete fetch
+        expect_text: ["Example Vendor changelog"]      # text that must appear; use end-of-page text to detect truncation
+        # drop_sections: ["Page Summary"]              # volatile sections to remove, by heading
+        # ignore_patterns: ["Cookie notice.*"]         # regexes for boilerplate lines
+        # min_length_ratio: 0.5                        # baseline guard (0 disables)

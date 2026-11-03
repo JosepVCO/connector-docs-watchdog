@@ -1,0 +1,37 @@
+[project]
+name = "connector-docs-watchdog"
+version = "0.1.0"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+description = "Watches vendor API docs for deprecations/breaking changes that may affect data connectors."
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.27",
+  "trafilatura>=1.12",
+  "feedparser>=6.0",
+  "pyyaml>=6.0",
+  "typer>=0.12",
+]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.45"]
+anthropic = ["anthropic>=0.40"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+docs-watchdog = "docs_watchdog.cli:app"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.setuptools.package-data]
+docs_watchdog = ["demo_data/*/*"]

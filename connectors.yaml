@@ -1,0 +1,112 @@
+# Watched connectors. Each entry is a connector: a vendor/product scope plus its official sources.
+# Sources marked `verified: false` still need a manual check that the URL exists and is fetchable
+# before enabling the connector. See README.md ("Add a new connector") for the field reference.
+#
+# Per-source options handled by the shared engine (no Python needed):
+#   expect_text      strings that must appear; a missing one marks the fetch INCOMPLETE (baseline kept).
+#                    Use text that sits at the END of the page to detect truncated fetches.
+#   drop_sections    headings whose whole section is volatile UI text (e.g. an auto-generated summary)
+#   ignore_patterns  regexes; lines matching them entirely are removed (UI boilerplate)
+connectors:
+  - name: Meta Ads
+    id: meta-ads
+    vendor: Meta
+    scope: Marketing API (Facebook/Instagram advertising)
+    priority: 1
+    enabled: true
+    sources:
+      # Primary: Meta's official "View as Markdown" endpoint for each docs page (plain HTTP).
+      # The HTML page itself is client-rendered; fallback renders it with Playwright.
+      - id: marketing-api-changelog
+        type: markdown
+        verified: true
+        expect_text: ["Available Marketing API versions"]
+        url: "https://developers.facebook.com/documentation/ads-commerce/marketing-api/marketing-api-changelog.md"
+        fallback:
+          type: playwright
+          url: "https://developers.facebook.com/docs/marketing-api/marketing-api-changelog"
+          selector: article
+      # The changelog page above is an index; the versioned changes live on one page per version.
+      # When a new version appears in the index, add its page here.
+      - id: versioned-changes-v26
+        type: markdown
+        verified: true
+        expect_text: ["Version 26.0"]
+        url: "https://developers.facebook.com/documentation/ads-commerce/marketing-api/marketing-api-changelog/version26.0.md"
+      - id: versioned-changes-v25
+        type: markdown
+        verified: true
+        expect_text: ["Version 25.0"]
+        url: "https://developers.facebook.com/documentation/ads-commerce/marketing-api/marketing-api-changelog/version25.0.md"
+      - id: out-of-cycle-changes
+        type: markdown
+        verified: true
+        expect_text: ["Out-Of-Cycle Changes"]
+        url: "https://developers.facebook.com/documentation/ads-commerce/marketing-api/out-of-cycle-changes/occ-{year}.md"
+      - id: developer-blog
+        type: rss
+        verified: true
+        min_chars: 100
+        url: "https://developers.facebook.com/blog/feed"
+  - name: Google Ads
+    id: google-ads
+    vendor: Google
+    scope: Google Ads API
+    priority: 1
+    enabled: true
+    sources:
+      - id: release-notes
+        type: html
+        verified: true
+        drop_sections: ["Page Summary"]  # auto-generated summary box, not vendor-authored changelog text
+        expect_text: ["Archived release notes"]  # last section of the page: detects truncated fetches
+        url: "https://developers.google.com/google-ads/api/docs/release-notes"
+      - id: sunset-dates
+        type: html
+        verified: true
+        drop_sections: ["Page Summary"]
+        expect_text: ["Feature deprecations and unversioned changes guide"]
+        url: "https://developers.google.com/google-ads/api/docs/sunset-dates"
+  - name: LinkedIn Marketing
+    id: linkedin-marketing
+    vendor: LinkedIn (Microsoft)
+    scope: LinkedIn Marketing API (advertising and marketing solutions)
+    priority: 1
+    enabled: true
+    sources:
+      - id: recent-changes
+        type: html
+        verified: true
+        ignore_patterns: ["Access to this page requires authorization.*"]  # Microsoft Learn UI text
+        expect_text: ["Archived Marketing API Changes"]  # end of page: detects truncated fetches
+        url: "https://learn.microsoft.com/en-us/linkedin/marketing/integrations/recent-changes"
+  - name: Google Analytics 4
+    id: google-analytics-4
+    priority: 2
+    enabled: false
+    sources:
+      - {id: changelog, type: html, verified: false, url: "https://developers.google.com/analytics/devguides/reporting/data/v1/changelog"}
+  - name: TikTok Ads
+    id: tiktok-ads
+    priority: 2
+    enabled: false
+    sources:
+      - {id: changelog, type: html, verified: false, url: "https://business-api.tiktok.com/portal/docs?id=1740029171730433"}
+  - name: HubSpot
+    id: hubspot
+    priority: 2
+    enabled: false
+    sources:
+      - {id: changelog, type: html, verified: false, url: "https://developers.hubspot.com/changelog"}
+  - name: Salesforce
+    id: salesforce
+    priority: 3
+    enabled: false
+    sources:
+      - {id: release-notes, type: html, verified: false, url: "https://help.salesforce.com/s/articleView?id=release-notes.salesforce_release_notes.htm"}
+  - name: Shopify
+    id: shopify
+    priority: 3
+    enabled: false
+    sources:
+      - {id: changelog, type: html, verified: false, url: "https://shopify.dev/changelog"}

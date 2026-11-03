@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!-- EXCERPT of https://developers.google.com/google-ads/api/docs/sunset-dates
+     captured 2026-11-03T14:10:26+00:00 (HTTP 200); sha256 of the original response: da9642b552787a8203ab6b638149ef2094ee11301493e4a45ef89ec907953c75
+     Content (c) Google, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/); code samples under Apache 2.0.
+     Changes: page chrome, scripts and most sections removed; kept sections: page summary box; heading + first paragraph of each section; full 'Feature deprecations and changes'.
+     This file is used only by offline extraction tests. See THIRD_PARTY_NOTICES.md. -->
+<html lang="en"><head><meta charset="utf-8"><title>Deprecation and sunset  |  Google Ads API  |  Google for Developers</title></head>
+<body><header><nav><a href="/">Home</a> <a href="/docs">Docs</a></nav></header>
+<main><article>
+<div class="devsite-article-body clearfix"><devsite-key-takeaways-panel role="region" aria-labelledby="key-takeaways-panel-title">
+  <div class="devsite-key-takeaways-panel-header" aria-labelledby="key-takeaways-panel-title" aria-expanded="false" role="button" tabindex="0">
+    
+    <img src="/_static/images/icons/spark.svg" alt="Spark icon">
+    <div class="devsite-key-takeaways-panel-title">
+      
+      <h2 class="no-link hide-from-toc" id="key-takeaways-panel-title" data-tooltip="Generated with AI">Page Summary</h2>
+    </div>
+    <span class="material-icons devsite-key-takeaways-panel-toggle-button" aria-hidden="true"></span>
+  </div>
+  <div class="devsite-key-takeaways-panel-content">
+    <devsite-feedback product-id="5123748" bucket="8963846920012181156" disable-product-feedback>
+      <button class="button-flat button-primary devsite-key-takeaways-report-button" data-title="Report Key Takeaways!" aria-label="Report Key Takeaways!">
+        <span class="material-icons" aria-label="Report Key Takeaways!">outlined_flag</span>
+      </button>
+    </devsite-feedback>
+    <ul class="devsite-key-takeaways-panel-list">
+      
+        <li>
+          <p>When a new API version is released, a deprecated version is given a sunset date after which it will no longer be available.</p>
+
+        </li>
+      
+        <li>
+          <p>Google aims to keep at most four major versions available at any time, with major versions lasting around 12 months and minor versions around 10 months.</p>
+
+        </li>
+      
+        <li>
+          <p>You will need to perform at most two upgrades per year, and you can upgrade directly to a non-sequential later version.</p>
+
+        </li>
+      
+        <li>
+          <p>There is at least a 20-week overlap between the release of client libraries for the latest version and the sunset date of the version being retired.</p>
+
+        </li>
+      
+        <li>
+          <p>You can view the Google Ads API versions used by your project in the Google Cloud Console under APIs &amp; Services.</p>
+
+        </li>
+      
+        <li>
+          <p>Deprecated versions are still usable but not the latest, while sunset versions are no longer functional and require an immediate upgrade.</p>
+
+        </li>
+      
+        <li>
+          <p>The timetable provides specific release, deprecation, and tentative sunset dates for available API versions, encouraging upgrades to the latest version.</p>
+
+        </li>
+      
+        <li>
+          <p>Specific client library versions support different Google Ads API versions as detailed in the provided tables for various programming languages.</p>
+
+        </li>
+      
+        <li>
+          <p>Feature deprecations, such as changes to conversion environment usage and handling of gclid/gbraid values, are also announced with effective dates and details on the developer blog.</p>
+
+        </li>
+      
+    </ul>
+  </div>
+</devsite-key-takeaways-panel>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>With the release of a new <a href="/google-ads/api/docs/concepts/versioning">version</a>, a deprecated
+version is given a sunset date, after which that version will no longer be
+available. Here are some other guidelines to keep in mind:</p>
+
+<ul>
+<li>We strive to keep at most five major versions available at any one time.</li>
+<li><em>Major</em> versions have a lifespan of around <strong>12 months</strong>—<em>minor</em>
+versions: 10 months.</li>
+<li>You'll have to perform at most <strong>two upgrades per year</strong>, and you don't have
+to upgrade in strict sequential order — for example, you can upgrade
+from version (N) directly to version (N+2).</li>
+</ul>
+
+<p>Our <a href="/google-ads/api/docs/client-libs">client libraries</a> support any available versions of a
+service, so you can gradually upgrade by specifying different versions of used
+services.</p>
+
+<h2 id="timetable" data-text="Timetable" tabindex="-1">Timetable</h2>
+
+<p>The following table lists the specific deprecation and sunset dates for each
+available version, and projected release dates for future versions. We encourage
+you to upgrade to the latest version as soon as feasible after its release. The
+tentative date means that the sunset could happen any time in that month, and
+the dates could change. <a href="//ads-developers.googleblog.com/2024/09/subscribe-to-blog.html">Subscribe to the
+blog</a> for API
+version sunset announcement reminders.</p>
+
+<h2 id="view-the-versions-your-project-is-using" data-text="View the versions your project is using" tabindex="-1">View the versions your project is using</h2>
+
+<p>You can view a list of methods and services your project has recently called
+using the <a href="//console.cloud.google.com">Google Cloud Console</a>:</p>
+
+<h2 id="differences-between-deprecation-and-sunset" data-text="Differences between deprecation and sunset" tabindex="-1">Differences between deprecation and sunset</h2>
+
+<h2 id="supported_client_library_versions" data-text="Supported client library versions" tabindex="-1">Supported client library versions</h2>
+
+<p>The table shows which client libraries work with which API versions.</p>
+
+<h2 id="feature_deprecations" data-text="Feature deprecations and changes" tabindex="-1">Feature deprecations and changes</h2>
+
+<p>While this page focuses on API version-level lifecycles, individual feature
+deprecations (such as the deprecation of Smart Campaigns) and unversioned
+workflow changes (such as new Demand Gen campaign budget requirements) are
+tracked separately.</p>
+
+<p>To check upcoming feature lifecycles and behavioral shifts across active
+versions, see the
+<a href="/google-ads/api/docs/deprecations">Feature deprecations and unversioned changes</a> guide.</p>
+
+  
+
+  
+    <devsite-hats-survey class="nocontent" data-nosnippet hats-id="qS3azbsJ0LHkahqinNfT0Z5kku5B" listnr-id="82128"></devsite-hats-survey>
+  
+</div>
+</article></main>
+<footer><p>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.</p></footer></body></html>

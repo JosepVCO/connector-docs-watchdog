@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- SYNTHETIC FIXTURE: invented text on the structural skeleton of a documentation-portal changelog page
+     (header/nav, auth notification, outline, warning admonition, dated release sections, archive heading).
+     It is not vendor documentation. The two 'Access to this page...' lines are a short UI string kept
+     verbatim only so the ignore_patterns rule can be tested. See THIRD_PARTY_NOTICES.md. -->
+<html lang="en-us"><head><meta charset="utf-8"><title>Recent Platform API Changes (synthetic fixture)</title></head>
+<body>
+<header><nav><a href="/">Home</a> <a href="/docs">Documentation</a> <a href="/learn">Learn</a></nav></header>
+<main>
+<div class="content-header"><h1>Recent Platform API Changes</h1></div>
+<div class="reading-width">
+<nav class="doc-outline" aria-label="In this article"><h2 class="title is-6">In this article</h2>
+<ul><li><a href="#november-2027">November 2027</a></li><li><a href="#october-2027">October 2027</a></li><li><a href="#archived">Archived</a></li></ul></nav>
+<div class="notification-content">
+<p class="margin-top-none authentication-determined not-authenticated">Access to this page requires authorization. You can try signing in or changing directories.</p>
+<p class="margin-top-none authentication-determined authenticated">Access to this page requires authorization. You can try changing directories.</p>
+</div>
+<div class="content">
+<div class="WARNING"><p class="alert-title">Warning</p>
+<p><strong>Deprecation Notice:</strong> The Platform Version 202701 (January 2027 release) will be sunset on December 15, 2027. Move to a newer API version before then so your integration keeps working. The migration guide lists the supported versions.</p>
+<p>Questions about the migration can be sent to developer support.</p></div>
+<h2 id="november-2027">November 2027 - Version 202711 (Latest)</h2>
+<h3>Product and Platform Announcements</h3>
+<ul>
+<li><strong>Creatives API: new <code>summary</code> field</strong>: Starting with version <code>202711</code>, the creatives endpoint can return a read-only <code>summary</code> field describing the creative. It is not returned by default; request it with the <code>fields</code> query parameter.</li>
+<li><strong>Reporting API: wider date range</strong>: Analytics queries can now cover up to 24 months in one request.</li>
+</ul>
+<h3>Breaking Changes</h3>
+<ul>
+<li><strong>Campaign API: new required <code>surface</code> field (action required)</strong>: Starting with version <code>202711</code>, creating a placement list requires a <code>surface</code> value. Requests without it fail with a <code>400</code> error. Existing accounts have a migration window that ends on January 31, 2028.</li>
+</ul>
+<h3>Version Sunset</h3>
+<p>The versions below are scheduled to be sunset on the dates shown.</p>
+<ul><li><strong>202610</strong> - October 15, 2027</li><li><strong>202611</strong> - November 16, 2027</li></ul>
+<h2 id="october-2027">October 2027 - Version 202710</h2>
+<h3>Product and Platform Announcements</h3>
+<ul><li><strong>Audience API: size estimates</strong>: Audience size estimates are now returned with each audience definition.</li></ul>
+<h2 id="september-2027">September 2027 - Version 202709</h2>
+<h3>Product and Platform Announcements</h3>
+<ul><li><strong>Targeting: new facet</strong>: A new seniority facet is available for audience targeting.</li></ul>
+<h2 id="august-2027">August 2027 - Version 202708</h2>
+<h3>Product and Platform Announcements</h3>
+<ul><li><strong>Conversions API</strong>: Batch uploads accept up to 1,000 events per request.</li></ul>
+<h2 id="july-2027">July 2027 - Version 202707</h2>
+<h3>Product and Platform Announcements</h3>
+<ul><li><strong>Ad accounts</strong>: Account status is now included in list responses.</li></ul>
+<h2 id="june-2027">June 2027 - Version 202706</h2>
+<h3>Product and Platform Announcements</h3>
+<ul><li><strong>Lead forms</strong>: Form questions can be marked optional.</li></ul>
+<h2 id="archived">Archived Marketing API Changes</h2>
+<p>To learn more about the API changes from earlier years, refer to the archive.</p>
+</div></div></main>
+<footer><p>Sample footer text. Privacy. Terms of use.</p></footer>
+</body></html>

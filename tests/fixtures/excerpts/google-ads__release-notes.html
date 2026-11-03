@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!-- EXCERPT of https://developers.google.com/google-ads/api/docs/release-notes
+     captured 2026-11-03T14:10:25+00:00 (HTTP 200); sha256 of the original response: f61b0a59fb87bffe0d61ebda8932deb2b2d94358c3604cc1684e0543e1360d06
+     Content (c) Google, licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/); code samples under Apache 2.0.
+     Changes: page chrome, scripts and most sections removed; kept sections: page summary box; heading + first paragraph of each section; full 'v24.1 (2026-05-13)' (table cut to 4 rows); 'Archived release notes'.
+     This file is used only by offline extraction tests. See THIRD_PARTY_NOTICES.md. -->
+<html lang="en"><head><meta charset="utf-8"><title>Release notes  |  Google Ads API  |  Google for Developers</title></head>
+<body><header><nav><a href="/">Home</a> <a href="/docs">Docs</a></nav></header>
+<main><article>
+<div class="devsite-article-body clearfix"><devsite-key-takeaways-panel role="region" aria-labelledby="key-takeaways-panel-title">
+  <div class="devsite-key-takeaways-panel-header" aria-labelledby="key-takeaways-panel-title" aria-expanded="false" role="button" tabindex="0">
+    
+    <img src="/_static/images/icons/spark.svg" alt="Spark icon">
+    <div class="devsite-key-takeaways-panel-title">
+      
+      <h2 class="no-link hide-from-toc" id="key-takeaways-panel-title" data-tooltip="Generated with AI">Page Summary</h2>
+    </div>
+    <span class="material-icons devsite-key-takeaways-panel-toggle-button" aria-hidden="true"></span>
+  </div>
+  <div class="devsite-key-takeaways-panel-content">
+    <devsite-feedback product-id="5123748" bucket="8963846920012181156" disable-product-feedback>
+      <button class="button-flat button-primary devsite-key-takeaways-report-button" data-title="Report Key Takeaways!" aria-label="Report Key Takeaways!">
+        <span class="material-icons" aria-label="Report Key Takeaways!">outlined_flag</span>
+      </button>
+    </devsite-feedback>
+    <ul class="devsite-key-takeaways-panel-list">
+      
+        <li>
+          <p>Google Ads API v22 introduces the AssetGenerationService for generating text and image assets using generative AI.</p>
+
+        </li>
+      
+        <li>
+          <p>New bidding goals without a target CPA or ROAS are added for App campaigns to optimize for installs or total value.</p>
+
+        </li>
+      
+        <li>
+          <p>Demand Gen campaigns now support the TargetCPC bidding strategy and asset automation for generating design variations and videos from existing assets.</p>
+
+        </li>
+      
+        <li>
+          <p>Performance Max campaigns gain new AssetAutomationType values for image enhancement and extraction, along with new segments for reporting.</p>
+
+        </li>
+      
+        <li>
+          <p>Planning services include updates for user lists, partner audiences, YouTube metrics, trend insights, and support for parental status and income ranges in AudienceInsightsService.</p>
+
+        </li>
+      
+    </ul>
+  </div>
+</devsite-key-takeaways-panel>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Refer to <a href="/google-ads/api/docs/deprecations#feature-deprecations">Feature deprecations</a> for
+an up-to-date list of current and planned feature deprecations, the
+<a href="/google-ads/api/docs/sunset-dates#timetable">Deprecation and sunset timetable</a> for version
+lifecycle dates, and <a href="/google-ads/api/docs/upgrade">Upgrade your API version</a> for
+filterable version-to-version proto difference tables.</p>
+
+<h2 id="release-summary" data-text="Release summary and quick links" tabindex="-1">Release summary and quick links</h2>
+
+<p>Use the following table to jump directly to a release's breaking changes, new
+features, or proto difference tables:</p>
+
+<h2 id="v26-top" data-text="v26 major and minor versions" tabindex="-1">v26 major and minor versions</h2>
+
+<p>Google Ads API v26 includes the following new features, updates, and breaking changes.</p>
+
+<h3 id="v26-1-2026-10-28" data-text="v26.1 (2026-10-28)" tabindex="-1">v26.1 (2026-10-28)</h3>
+
+<p>The following new features and updates were added in Google Ads API v26.1. Minor
+versions like v26.1 don't contain breaking changes.</p>
+
+<h3 id="v26-2026-10-14" data-text="v26 (2026-10-14)" tabindex="-1">v26 (2026-10-14)</h3>
+
+<p>The following new features, updates, and breaking changes were added in Google Ads API
+v26, which is a major release.</p>
+
+<h2 id="v25-top" data-text="v25 major and minor versions" tabindex="-1">v25 major and minor versions</h2>
+
+<p>Google Ads API v25 includes the following new features, updates, and breaking changes.</p>
+
+<h3 id="v25-2-2026-09-23" data-text="v25.2 (2026-09-23)" tabindex="-1">v25.2 (2026-09-23)</h3>
+
+<p>The following new features and updates were added in Google Ads API v25.2. Minor
+versions like v25.2 don't contain breaking changes.</p>
+
+<h3 id="v25-1-2026-08-19" data-text="v25.1 (2026-08-19)" tabindex="-1">v25.1 (2026-08-19)</h3>
+
+<p>The following new features and updates were added in Google Ads API v25.1. Minor
+versions like v25.1 don't contain breaking changes.</p>
+
+<h3 id="v25-2026-07-22" data-text="v25 (2026-07-22)" tabindex="-1">v25 (2026-07-22)</h3>
+
+<p>The following new features, updates, and breaking changes were added in Google Ads API
+v25, which is a major release.</p>
+
+<h2 id="v24-top" data-text="v24 major and minor versions" tabindex="-1">v24 major and minor versions</h2>
+
+<p>Google Ads API v24 includes the following new features, updates, and breaking changes.</p>
+
+<h3 id="v24-2-2026-06-24" data-text="v24.2 (2026-06-24)" tabindex="-1">v24.2 (2026-06-24)</h3>
+
+<p>The following new features and updates were added in Google Ads API v24.2. Minor
+versions like v24.2 don't contain breaking changes.</p>
+
+<h3 id="v24-1-2026-05-13" data-text="v24.1 (2026-05-13)" tabindex="-1">v24.1 (2026-05-13)</h3>
+
+<p>The following new features and updates were added in Google Ads API v24.1. Minor
+versions like v24.1 don't contain breaking changes.</p>
+
+<div>
+  <devsite-filter highlight="td">
+    <input placeholder="Filter changes..." type="text">
+    <table class="release-notes-table">
+      <thead>
+        <tr>
+          <th>Features and updates</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody class="list">
+        <tr class="release-notes-subtitle">
+          <td colspan="3">Ads</td>
+        </tr>
+        <tr>
+          <td><a href="/google-ads/api/reference/rpc/v24/DemandGenMultiAssetAdInfo#classic_display_images[]"><code translate="no" dir="ltr">DemandGenMultiAssetAdInfo.classic_display_images</code></a></td>
+          <td>New field</td>
+          <td>Custom uploaded display images served without requiring extra responsive assets.</td>
+        </tr>
+        <tr class="release-notes-subtitle">
+          <td colspan="3">Experiments</td>
+        </tr>
+        </tbody>
+    </table>
+  </devsite-filter>
+</div>
+
+<h3 id="v24-2026-04-22" data-text="v24 (2026-04-22)" tabindex="-1">v24 (2026-04-22)</h3>
+
+<p>The following new features, updates, and breaking changes were added in Google Ads API
+v24, which is a major release.</p>
+
+<h2 id="v23-top" data-text="v23 major and minor versions" tabindex="-1">v23 major and minor versions</h2>
+
+<p>Google Ads API v23 includes the following new features, updates, and breaking changes.</p>
+
+<h3 id="v23-3-2026-06-24" data-text="v23.3 (2026-06-24)" tabindex="-1">v23.3 (2026-06-24)</h3>
+
+<p>The following new features and updates were added in Google Ads API v23.3. Minor
+versions like v23.3 don't contain breaking changes.</p>
+
+<h3 id="v23-2-2026-03-25" data-text="v23.2 (2026-03-25)" tabindex="-1">v23.2 (2026-03-25)</h3>
+
+<p>The following new features and updates were added in Google Ads API v23.2. Minor
+versions like v23.2 don't contain breaking changes.</p>
+
+<h3 id="v23-1-2026-02-25" data-text="v23.1 (2026-02-25)" tabindex="-1">v23.1 (2026-02-25)</h3>
+
+<p>The following new features and updates were added in Google Ads API v23.1. Minor
+versions like v23.1 don't contain breaking changes.</p>
+
+<h3 id="v23-2026-01-28" data-text="v23 (2026-01-28)" tabindex="-1">v23 (2026-01-28)</h3>
+
+<p></p><h2 id="archived-release-notes" data-text="Archived release notes" tabindex="-1">Archived release notes</h2>
+
+<p>See <a href="/google-ads/api/docs/archived-release-notes">Sunsetted versions</a> for archived release notes.</p>
+
+  
+
+  
+    <devsite-hats-survey class="nocontent" data-nosnippet hats-id="qS3azbsJ0LHkahqinNfT0Z5kku5B" listnr-id="82128"></devsite-hats-survey>
+  
+</div>
+</article></main>
+<footer><p>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License.</p></footer></body></html>

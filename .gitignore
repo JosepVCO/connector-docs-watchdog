@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+.venv*/
+venv/
+env/
+
+# Caches and tooling output
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.cache/
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Editors, IDEs and OS files
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Assistant / agent tooling state
+.claude/
+CLAUDE.local.md
+
+# Local data: baselines, snapshots, backups (never published)
+data/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.bak
+*.orig
+*.rej
+
+# Local environment files and credentials (.env.example is the documented template)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Scratch space and personal notes
+scratch/
+tmp/
+.tmp/
+notes/
+NOTES.md
+*.local.md
+
+# Generated reports: only the maintained examples are published
+reports/*.md
+!reports/demo-report.md
+
+# Workflow checkout of the data branch
+state/
